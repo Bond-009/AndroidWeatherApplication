@@ -12,6 +12,7 @@ data class OpenWeatherMapResponse (
     val visibility: Int,
     val wind: Wind,
     val clouds: Clouds,
+    val rain: Rain,
     val dt: Long,
     val sys: Sys,
     val timezone: Int,
@@ -57,11 +58,15 @@ data class Wind (
     val deg: Int,
     val gust: Float? = null
 )
-/*
+
 @Serializable
 data class Rain (
+    @SerialName("1h")
+    val h1: Float? = null,
+    @SerialName("3h")
+    val h3: Float? = null
 )
-*/
+
 @Serializable
 data class Clouds (
     val all: Int

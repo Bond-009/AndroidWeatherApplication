@@ -42,8 +42,8 @@ fun WeatherComponent(
     else {
         Column {
             Text(text = currentWeather.name)
-            Text(text = String.format("%.0f°C", currentWeather.main.temp - 273.15f))
-            Text(text = String.format("Min %.0f°C Max %.0f°C", currentWeather.main.tempMin - 273.15f, currentWeather.main.tempMax - 273.15f))
+            Text(text = String.format("%.0f°C", currentWeather.main.temp))
+            Text(text = String.format("Min %.0f°C Max %.0f°C", currentWeather.main.tempMin, currentWeather.main.tempMax))
             Text(text = String.format("%d%% Humidity", currentWeather.main.humidity))
         }
     }

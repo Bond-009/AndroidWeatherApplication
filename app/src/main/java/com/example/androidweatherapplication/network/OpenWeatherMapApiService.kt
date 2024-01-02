@@ -30,6 +30,7 @@ interface OpenWeatherMapApiService {
     suspend fun getWeather(
         @Query("q") cityName: String,
         @Query("appid") apikey: String = ApiKey,
-        @Query("mode") mode: String = "json"
+        @Query("mode") mode: String = "json",
+        @Query("units") units: String = "metric"
     ): OpenWeatherMapResponse
 }
