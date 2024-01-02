@@ -14,7 +14,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 @Composable
 fun WeatherOverview(
     modifier: Modifier = Modifier,
-    weatherOverviewViewModel: WeatherOverviewViewModel = viewModel()
+    weatherOverviewViewModel: WeatherOverviewViewModel = viewModel(factory = WeatherOverviewViewModel.Factory)
 ) {
     val weatherOverviewState = weatherOverviewViewModel.uiState.collectAsState()
 
