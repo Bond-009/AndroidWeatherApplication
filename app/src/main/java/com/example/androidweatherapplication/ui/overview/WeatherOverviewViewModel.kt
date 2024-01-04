@@ -1,6 +1,5 @@
 package com.example.androidweatherapplication.ui.overview
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -18,7 +17,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import java.io.IOException
+import retrofit2.HttpException
 
 class WeatherOverviewViewModel(
     private val userPreferencesRepository: UserPreferencesRepository
@@ -37,21 +36,21 @@ class WeatherOverviewViewModel(
     }
 
     private fun getWeather() {
-        try {
-            viewModelScope.launch {
-                userPreferencesRepository.city.collect { city ->
-                        val result = OpenWeatherMapApi.retrofitService.getWeather(city)
-                        _uiState.update {
-                            it.copy(currentWeather = result)
-                        }
-                        weatherApiState = WeatherApiState.Success(result)
+        viewModelScope.launch {
+            userPreferencesRepository.city.collect { city ->
+                try {
+                    val result = OpenWeatherMapApi.retrofitService.getWeather(city)
+                    _uiState.update {
+                        it.copy(currentWeather = result)
+                    }
+                    weatherApiState = WeatherApiState.Success(result)
+                }
+                catch (e: HttpException){
+                    //show a toast? save a log on firebase? ...
+                    //set the error state
+                    weatherApiState = WeatherApiState.Error
                 }
             }
-        }
-        catch (e: IOException){
-            //show a toast? save a log on firebase? ...
-            //set the error state
-            weatherApiState = WeatherApiState.Error
         }
     }
 

@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.androidweatherapplication.ui.overview.WeatherOverview
+import com.example.androidweatherapplication.ui.settingsScreen.SettingsScreen
 
 @Composable
 fun navComponent(
@@ -19,6 +20,9 @@ fun navComponent(
     ) {
         composable(route = WeatherOverviewScreen.Start.name) {
             WeatherOverview()
+        }
+        composable(route = WeatherOverviewScreen.Settings.name) {
+            SettingsScreen()
         }
     }
 }
