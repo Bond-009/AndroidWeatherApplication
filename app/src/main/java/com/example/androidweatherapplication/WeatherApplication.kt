@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import com.example.androidweatherapplication.data.DataStoreUserPreferencesRepository
 import com.example.androidweatherapplication.data.UserPreferencesRepository
 
 private const val PREFERENCE_NAME = "preferences"
@@ -18,6 +19,6 @@ class WeatherApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        userPreferencesRepository = UserPreferencesRepository(dataStore)
+        userPreferencesRepository = DataStoreUserPreferencesRepository(dataStore)
     }
 }

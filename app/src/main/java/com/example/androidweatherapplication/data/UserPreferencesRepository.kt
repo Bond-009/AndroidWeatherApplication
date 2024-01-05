@@ -11,10 +11,15 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import java.io.IOException
 
-class UserPreferencesRepository(
+interface UserPreferencesRepository {
+    val city: Flow<String>
+    suspend fun saveCityPreference(city: String)
+}
+
+class DataStoreUserPreferencesRepository(
     private val dataStore: DataStore<Preferences>
-){
-    val city: Flow<String> = dataStore.data
+) : UserPreferencesRepository {
+    override val city: Flow<String> = dataStore.data
         .catch {
             if(it is IOException) {
                 Log.e(TAG, "Error reading preferences.", it)
@@ -32,7 +37,7 @@ class UserPreferencesRepository(
         const val TAG = "UserPreferencesRepo"
     }
 
-    suspend fun saveCityPreference(city: String) {
+    override suspend fun saveCityPreference(city: String) {
         dataStore.edit {
             mutablePreferences -> mutablePreferences[CITY] = city
         }
