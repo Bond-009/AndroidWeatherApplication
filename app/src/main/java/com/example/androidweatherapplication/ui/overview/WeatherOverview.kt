@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
@@ -21,7 +22,7 @@ fun WeatherOverview(
     val weatherApiState = weatherOverviewViewModel.weatherApiState
 
     Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
-        Box(modifier = modifier) {
+        Box(modifier = modifier.testTag("weatherApiOverview")) {
             when (weatherApiState) {
                 is WeatherApiState.Loading -> Text("Loading...")
                 is WeatherApiState.Error -> Text("Couldn't load...")
