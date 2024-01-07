@@ -18,7 +18,7 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-//create the actual function implementations (expensive!)
+// create the actual function implementations (expensive!)
 object OpenWeatherMapApi {
     val retrofitService : OpenWeatherMapApiService by lazy {
         retrofit.create(OpenWeatherMapApiService::class.java)
@@ -26,6 +26,14 @@ object OpenWeatherMapApi {
 }
 
 interface OpenWeatherMapApiService {
+    /**
+     * Call current weather data
+     * @param cityName The city to get the weather from
+     * @param apikey Your unique API key
+     * @param mode Response format. Possible values are xml and html. If you don't use the mode parameter format is JSON by default.
+     * @param units Units of measurement. standard, metric and imperial units are available. If you do not use the units parameter, standard units will be applied by default.
+     * @return The response from the OpenWeatherMap API
+     */
     @GET("/data/2.5/weather")
     suspend fun getWeather(
         @Query("q") cityName: String,

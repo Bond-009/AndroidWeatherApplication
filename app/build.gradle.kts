@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.21"
+    id("org.jetbrains.dokka") version "1.9.10"
 }
 
 android {
@@ -62,8 +63,8 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.1.2")
 
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.01"))
@@ -81,4 +82,14 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
 
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    dokkaPlugin("org.jetbrains.dokka:android-documentation-plugin:1.9.10")
+}
+
+tasks.dokkaHtml.configure {
+    outputDirectory.set(file("../docs/html"))
+}
+
+tasks.dokkaGfm.configure {
+    outputDirectory.set(file("../docs/gfm"))
 }

@@ -1,0 +1,6 @@
+//[app](../../../index.md)/[com.example.androidweatherapplication.model](../index.md)/[OpenWeatherMapResponse](index.md)/[OpenWeatherMapResponse](-open-weather-map-response.md)
+
+# OpenWeatherMapResponse
+
+[androidJvm]\
+constructor(coord: [Coord](../-coord/index.md), weather: [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Weather](../-weather/index.md)&gt;, base: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), main: [Main](../-main/index.md), visibility: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), wind: [Wind](../-wind/index.md), clouds: [Clouds](../-clouds/index.md), rain: [Rain](../-rain/index.md)? = null, snow: [Snow](../-snow/index.md)? = null, dt: [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html), sys: [Sys](../-sys/index.md), timezone: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), id: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html), name: [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html), cod: [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html))

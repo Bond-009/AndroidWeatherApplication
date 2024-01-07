@@ -29,8 +29,7 @@ class SettingsScreenViewModel(
     }
 
     fun setCity(city: String) {
-        _uiState.update { it.copy(
-            city = city) }
+        _uiState.update { it.copy(city = city) }
         viewModelScope.launch {
             userPreferencesRepository.saveCityPreference(city)
         }

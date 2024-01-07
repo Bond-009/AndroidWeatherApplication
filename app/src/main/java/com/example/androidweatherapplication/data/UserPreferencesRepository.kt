@@ -11,11 +11,24 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import java.io.IOException
 
+/**
+ * The user preferences repository
+ */
 interface UserPreferencesRepository {
+    /**
+     * Flow returning the configured city
+     */
     val city: Flow<String>
+
+    /**
+     * Saves the city to the repository
+     */
     suspend fun saveCityPreference(city: String)
 }
 
+/**
+ * An implementation of the user preferences repository interface using DataStore
+ */
 class DataStoreUserPreferencesRepository(
     private val dataStore: DataStore<Preferences>
 ) : UserPreferencesRepository {
