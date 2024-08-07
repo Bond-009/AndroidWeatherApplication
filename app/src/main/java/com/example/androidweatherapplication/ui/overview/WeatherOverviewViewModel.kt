@@ -11,16 +11,16 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.androidweatherapplication.WeatherApplication
 import com.example.androidweatherapplication.data.UserPreferencesRepository
-import com.example.androidweatherapplication.network.OpenWeatherMapApi
+import com.example.androidweatherapplication.data.WeatherRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import retrofit2.HttpException
 
 class WeatherOverviewViewModel(
-    private val userPreferencesRepository: UserPreferencesRepository
+    private val userPreferencesRepository: UserPreferencesRepository,
+    private val weatherRepository: WeatherRepository
 ) : ViewModel() {
 
     // use StateFlow (Flow: emits current state + any updates)
@@ -38,18 +38,16 @@ class WeatherOverviewViewModel(
     private fun getWeather() {
         viewModelScope.launch {
             userPreferencesRepository.city.collect { city ->
-                try {
-                    val result = OpenWeatherMapApi.retrofitService.getWeather(city)
-                    _uiState.update {
-                        it.copy(currentWeather = result)
+                    var result = weatherRepository.getWeather(city)
+                    if (result != null) {
+                        _uiState.update {
+                            it.copy(currentWeather = result)
+                        }
+                        weatherApiState = WeatherApiState.Success(result)
                     }
-                    weatherApiState = WeatherApiState.Success(result)
-                }
-                catch (e: HttpException){
-                    //show a toast? save a log on firebase? ...
-                    //set the error state
-                    weatherApiState = WeatherApiState.Error
-                }
+                    else {
+                        weatherApiState = WeatherApiState.Error
+                    }
             }
         }
     }
@@ -61,7 +59,8 @@ class WeatherOverviewViewModel(
                 if (Instance == null) {
                     val application = (this[APPLICATION_KEY] as WeatherApplication)
                     val userPreferencesRepository = application.userPreferencesRepository;
-                    Instance = WeatherOverviewViewModel(userPreferencesRepository = userPreferencesRepository)
+                    val weatherRepository = application.container.weatherRepository;
+                    Instance = WeatherOverviewViewModel(userPreferencesRepository = userPreferencesRepository, weatherRepository = weatherRepository)
                 }
                 Instance!!
             }
