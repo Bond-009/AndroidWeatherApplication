@@ -1,11 +1,10 @@
 package com.example.androidweatherapplication
 
-import com.example.androidweatherapplication.data.UserPreferencesRepository
+import com.example.androidweatherapplication.fake.FakeUserPreferencesRepository
 import com.example.androidweatherapplication.ui.settingsScreen.SettingsScreenViewModel
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.mockito.kotlin.mock
 
 class SettingsScreenViewModelTest {
 
@@ -13,11 +12,11 @@ class SettingsScreenViewModelTest {
     val testDispatcher = TestDispatcherRule()
 
     private lateinit var viewModel: SettingsScreenViewModel
-    private lateinit var repo: UserPreferencesRepository
+    private lateinit var repo: FakeUserPreferencesRepository
 
     @Before
     fun setup() {
-        repo = mock()
+        repo = FakeUserPreferencesRepository()
         viewModel = SettingsScreenViewModel(repo)
     }
     @Test
