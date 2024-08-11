@@ -25,3 +25,9 @@ data class [Main](index.md)(val temp: [Float](https://kotlinlang.org/api/latest/
 | [temp](temp.md) | [androidJvm]<br>val [temp](temp.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>Temperature |
 | [tempMax](temp-max.md) | [androidJvm]<br>@SerialName(value = &quot;temp_max&quot;)<br>val [tempMax](temp-max.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>Maximum temperature at the moment. This is maximal currently observed temperature (within large megalopolises and urban areas) |
 | [tempMin](temp-min.md) | [androidJvm]<br>@SerialName(value = &quot;temp_min&quot;)<br>val [tempMin](temp-min.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>Minimum temperature at the moment. This is minimal currently observed temperature (within large megalopolises and urban areas) |
+
+## Functions
+
+| Name | Summary |
+|---|---|
+| [asDbMain](../../com.example.androidweatherapplication.data.database/as-db-main.md) | [androidJvm]<br>fun [Main](index.md).[asDbMain](../../com.example.androidweatherapplication.data.database/as-db-main.md)(): [Main](../../com.example.androidweatherapplication.data.database/-main/index.md) |

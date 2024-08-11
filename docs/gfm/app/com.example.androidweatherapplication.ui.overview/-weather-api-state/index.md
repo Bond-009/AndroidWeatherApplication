@@ -2,7 +2,7 @@
 
 # WeatherApiState
 
-interface [WeatherApiState](index.md)
+sealed interface [WeatherApiState](index.md)
 
 #### Inheritors
 

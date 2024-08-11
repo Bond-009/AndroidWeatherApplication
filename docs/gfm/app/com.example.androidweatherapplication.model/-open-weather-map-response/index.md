@@ -32,3 +32,9 @@ data class [OpenWeatherMapResponse](index.md)(val coord: [Coord](../-coord/index
 | [visibility](visibility.md) | [androidJvm]<br>val [visibility](visibility.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)<br>Visibility, meter. The maximum value of the visibility is 10 km |
 | [weather](weather.md) | [androidJvm]<br>val [weather](weather.md): [List](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)&lt;[Weather](../-weather/index.md)&gt; |
 | [wind](wind.md) | [androidJvm]<br>val [wind](wind.md): [Wind](../-wind/index.md) |
+
+## Functions
+
+| Name | Summary |
+|---|---|
+| [asDbWeather](../../com.example.androidweatherapplication.data.database/as-db-weather.md) | [androidJvm]<br>fun [OpenWeatherMapResponse](index.md).[asDbWeather](../../com.example.androidweatherapplication.data.database/as-db-weather.md)(): [dbWeather](../../com.example.androidweatherapplication.data.database/db-weather/index.md) |

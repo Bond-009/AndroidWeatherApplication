@@ -19,3 +19,9 @@ data class [Coord](index.md)(val lon: [Float](https://kotlinlang.org/api/latest/
 |---|---|
 | [lat](lat.md) | [androidJvm]<br>val [lat](lat.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>Latitude of the location |
 | [lon](lon.md) | [androidJvm]<br>val [lon](lon.md): [Float](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)<br>Longitude of the location |
+
+## Functions
+
+| Name | Summary |
+|---|---|
+| [asDbCoord](../../com.example.androidweatherapplication.data.database/as-db-coord.md) | [androidJvm]<br>fun [Coord](index.md).[asDbCoord](../../com.example.androidweatherapplication.data.database/as-db-coord.md)(): [Coord](../../com.example.androidweatherapplication.data.database/-coord/index.md) |

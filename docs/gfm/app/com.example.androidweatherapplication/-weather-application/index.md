@@ -15,6 +15,7 @@ class [WeatherApplication](index.md) : [Application](https://developer.android.c
 
 | Name | Summary |
 |---|---|
+| [container](container.md) | [androidJvm]<br>lateinit var [container](container.md): [AppContainer](../../com.example.androidweatherapplication.data/-app-container/index.md) |
 | [userPreferencesRepository](user-preferences-repository.md) | [androidJvm]<br>lateinit var [userPreferencesRepository](user-preferences-repository.md): [UserPreferencesRepository](../../com.example.androidweatherapplication.data/-user-preferences-repository/index.md) |
 
 ## Functions

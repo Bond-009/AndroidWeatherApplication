@@ -6,9 +6,9 @@
 
 | Name | Summary |
 |---|---|
-| [WeatherApiState](-weather-api-state/index.md) | [androidJvm]<br>interface [WeatherApiState](-weather-api-state/index.md) |
+| [WeatherApiState](-weather-api-state/index.md) | [androidJvm]<br>sealed interface [WeatherApiState](-weather-api-state/index.md) |
 | [WeatherOverviewState](-weather-overview-state/index.md) | [androidJvm]<br>data class [WeatherOverviewState](-weather-overview-state/index.md)(val currentWeather: [OpenWeatherMapResponse](../com.example.androidweatherapplication.model/-open-weather-map-response/index.md)?) |
-| [WeatherOverviewViewModel](-weather-overview-view-model/index.md) | [androidJvm]<br>class [WeatherOverviewViewModel](-weather-overview-view-model/index.md)(userPreferencesRepository: [UserPreferencesRepository](../com.example.androidweatherapplication.data/-user-preferences-repository/index.md)) : [ViewModel](https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModel.html) |
+| [WeatherOverviewViewModel](-weather-overview-view-model/index.md) | [androidJvm]<br>class [WeatherOverviewViewModel](-weather-overview-view-model/index.md)(userPreferencesRepository: [UserPreferencesRepository](../com.example.androidweatherapplication.data/-user-preferences-repository/index.md), weatherRepository: [WeatherRepository](../com.example.androidweatherapplication.data/-weather-repository/index.md)) : [ViewModel](https://developer.android.com/reference/kotlin/androidx/lifecycle/ViewModel.html) |
 
 ## Functions
 

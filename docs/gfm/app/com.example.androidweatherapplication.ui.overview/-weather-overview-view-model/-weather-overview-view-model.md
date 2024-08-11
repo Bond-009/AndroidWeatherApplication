@@ -3,4 +3,4 @@
 # WeatherOverviewViewModel
 
 [androidJvm]\
-constructor(userPreferencesRepository: [UserPreferencesRepository](../../com.example.androidweatherapplication.data/-user-preferences-repository/index.md))
+constructor(userPreferencesRepository: [UserPreferencesRepository](../../com.example.androidweatherapplication.data/-user-preferences-repository/index.md), weatherRepository: [WeatherRepository](../../com.example.androidweatherapplication.data/-weather-repository/index.md))

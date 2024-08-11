@@ -21,3 +21,9 @@ data class [Weather](index.md)(val id: [Int](https://kotlinlang.org/api/latest/j
 | [icon](icon.md) | [androidJvm]<br>val [icon](icon.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Weather icon id |
 | [id](id.md) | [androidJvm]<br>val [id](id.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)<br>Weather condition id |
 | [main](main.md) | [androidJvm]<br>val [main](main.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Group of weather parameters (Rain, Snow, Clouds etc.) |
+
+## Functions
+
+| Name | Summary |
+|---|---|
+| [asDbWeather](../../com.example.androidweatherapplication.data.database/as-db-weather.md) | [androidJvm]<br>fun [Weather](index.md).[asDbWeather](../../com.example.androidweatherapplication.data.database/as-db-weather.md)(): [Weather](../../com.example.androidweatherapplication.data.database/-weather/index.md) |

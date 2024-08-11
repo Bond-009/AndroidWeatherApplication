@@ -6,5 +6,10 @@
 
 | Name | Summary |
 |---|---|
-| [OpenWeatherMapApi](-open-weather-map-api/index.md) | [androidJvm]<br>object [OpenWeatherMapApi](-open-weather-map-api/index.md) |
 | [OpenWeatherMapApiService](-open-weather-map-api-service/index.md) | [androidJvm]<br>interface [OpenWeatherMapApiService](-open-weather-map-api-service/index.md) |
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [BASE_URL](-b-a-s-e_-u-r-l.md) | [androidJvm]<br>const val [BASE_URL](-b-a-s-e_-u-r-l.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

@@ -22,3 +22,9 @@ data class [Sys](index.md)(val type: [Int](https://kotlinlang.org/api/latest/jvm
 | [sunrise](sunrise.md) | [androidJvm]<br>val [sunrise](sunrise.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)<br>Sunrise time, unix, UTC |
 | [sunset](sunset.md) | [androidJvm]<br>val [sunset](sunset.md): [Long](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)<br>Sunset time, unix, UTC |
 | [type](type.md) | [androidJvm]<br>val [type](type.md): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)? = null<br>Internal parameter |
+
+## Functions
+
+| Name | Summary |
+|---|---|
+| [asDbSys](../../com.example.androidweatherapplication.data.database/as-db-sys.md) | [androidJvm]<br>fun [Sys](index.md).[asDbSys](../../com.example.androidweatherapplication.data.database/as-db-sys.md)(): [Sys](../../com.example.androidweatherapplication.data.database/-sys/index.md) |
