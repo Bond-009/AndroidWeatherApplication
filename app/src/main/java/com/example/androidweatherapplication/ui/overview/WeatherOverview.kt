@@ -45,7 +45,7 @@ fun WeatherComponent(
     modifier: Modifier = Modifier,
     weatherOverviewState: WeatherOverviewState
 ) {
-    val currentWeather = weatherOverviewState.currentWeather!!;
+    val currentWeather = weatherOverviewState.currentWeather!!
     RotationAware(modifier = modifier) {
         MainWeatherComponent(modifier = modifier, weatherResponse = currentWeather)
         Spacer(modifier = Modifier.size(24.dp))
